@@ -3,11 +3,12 @@ import Input from './Input';
 import { useState } from 'react';
 import { phoneBookActions } from 'store/phone-book';
 import { v4 as uuid } from 'uuid';
+import { phoneBookSelector } from 'store/selectors';
 
 export default function FormNewPhone() {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
-  const { phoneBook } = useSelector(state => state.phoneBook);
+  const { phoneBook } = useSelector(phoneBookSelector);
   const dispatch = useDispatch();
 
   function handleSubmit(event) {

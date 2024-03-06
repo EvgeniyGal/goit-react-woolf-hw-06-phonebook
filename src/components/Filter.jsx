@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
 import Input from './Input';
 import { filterActions } from 'store/filter';
+import { filterSelector } from 'store/selectors';
 
 export default function Filter() {
-  const { filter } = useSelector(state => state.filter);
+  const { filter } = useSelector(filterSelector);
   const dispatch = useDispatch();
 
   const handlerChange = (_, value) => {

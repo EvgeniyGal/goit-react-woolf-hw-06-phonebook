@@ -1,9 +1,10 @@
 import { useSelector } from 'react-redux';
 import Contact from './ContactItem';
+import { filterSelector, phoneBookSelector } from 'store/selectors';
 
 export default function Contacts() {
-  const { filter } = useSelector(state => state.filter);
-  const { phoneBook } = useSelector(state => state.phoneBook);
+  const { filter } = useSelector(filterSelector);
+  const { phoneBook } = useSelector(phoneBookSelector);
 
   const filteredPhoneBook = filter
     ? phoneBook.filter(
